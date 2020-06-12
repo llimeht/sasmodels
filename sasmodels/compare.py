@@ -116,7 +116,7 @@ Options (* for default):
     === help ===
     -h/-? print this help
     -models[=all] show all builtin models of a given type:
-        all, py, c, double, single, opencl, 1d, 2d, magnetic
+    all, py, c, double, single, opencl, 1d, 2d, magnetic
 
     === environment variables ===
     -DSAS_MODELPATH=~/.sasmodels/custom_models sets path to custom models
