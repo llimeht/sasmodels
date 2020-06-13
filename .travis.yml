@@ -41,6 +41,7 @@ before_install:
 install:
 - pip install bumps
 - pip install unittest-xml-reporting tinycc
+- pip install sphinx-autodoc-typehints
 script:
 - python --version
 #- python -m sasmodels.model_test -v dll all
