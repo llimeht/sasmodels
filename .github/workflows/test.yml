@@ -55,7 +55,21 @@ jobs:
 
         pytest -v
 
-    - name: check that the docs build (linux only)
-      if: ${{ matrix.os == 'ubuntu-latest' }}
+  docs:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Set up Python
+      uses: actions/setup-python@v1
+
+    - name: Install Python dependencies
+      run: |
+        python -m pip install --upgrade pip
+        python -m pip install wheel setuptools
+        python -m pip install numpy scipy matplotlib docutils sphinx bumps tinycc
+
+    - name: check that the docs build
       run: |
         make -j 4 -C doc SPHINXOPTS="-W --keep-going" html
